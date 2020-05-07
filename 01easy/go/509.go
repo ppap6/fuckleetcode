@@ -39,3 +39,18 @@ func fib4(N int) int {
 	}
 	return dp[N]
 }
+
+// 动态规划，降低内存占用
+func fib5(N int) int {
+	if N == 0 {
+		return 0
+	}
+	if N == 1 || N == 2 {
+		return 1
+	}
+	prev, curr := 1, 1
+	for i:=3; i<=N; i++{
+		curr, prev = prev + curr, curr
+	}
+	return curr
+}
