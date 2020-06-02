@@ -11,9 +11,12 @@ class Solution:
         return " "
 
 # 优化：
+import collections
 class Solution:
     def firstUniqChar(self, s: str) -> str:
-        dic = {}
+        # 原来：dic = {}
+        #此处应该用有序字典
+        dic = collections.OrderedDict()
         for i in s:
             dic[i] = not i in dic
         for k, v in dic.items():
