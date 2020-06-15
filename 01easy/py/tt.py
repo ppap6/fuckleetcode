@@ -1,4 +1,4 @@
-# 一个十进制整数转换任意进制的数
+# 一个十进制整数转换任意进制（十以内的进制）的数
 import math
 def ten_to_other(nums, n:int):
     '''
@@ -22,12 +22,12 @@ def ten_to_other(nums, n:int):
             integer = integer // n
     return tmp1[::-1]+"."+tmp2 if tmp1 else "0."+tmp2
 
-# 十进制整数转换任意进制的数（不包含小数部分）
+# 十进制整数转换任意进制（62以内）的数（不包含小数部分）
 def baseN(num, b):
     return ((num == 0) and "0") or (baseN(num // b, b).lstrip("0") + "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"[num % b])
 
 
-# 任意进制的数转化为十进制的数（含小数）
+# 任意进制（62以内）的数转化为十进制的数（含小数）
 def other_to_ten(s:str, n:int):
     baseList = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
     '''
